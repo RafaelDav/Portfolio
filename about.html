@@ -11,6 +11,7 @@
       display: flex;
       align-items: center;
       gap: 2em; /* Space between image and text */
+      flex-wrap: wrap; /* Allows the items to wrap in smaller screens */
     }
     .bio-container img {
       max-width: 200px; /* Adjust the width as needed */
@@ -19,6 +20,21 @@
     }
     .bio-container .bio-text {
       max-width: 600px; /* Adjust the width as needed */
+    }
+
+    /* Media Query for mobile devices */
+    @media (max-width: 768px) {
+      .bio-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        gap: 1em; /* Reduce space between image and text */
+      }
+      .bio-container img {
+        max-width: 150px; /* Smaller image on mobile */
+      }
+      .bio-container .bio-text {
+        text-align: center; /* Center text on mobile */
+      }
     }
   </style>
 </head>
@@ -34,7 +50,7 @@
   </header>
   <main>
     <section class="bio-container">
-      <img src="Images/Profile.jpg" alt="Rafael Ramírez" class="profile-photo">
+      <img src="images/profile.jpg" alt="Rafael Ramírez" class="profile-photo">
       <div class="bio-text">
         <p>Hello, my name is Rafael Ramírez: Mechanical Electrical Engineer with 7 years of experience in the Oil & Gas sector and currently venturing into SAP Basis. Enthusiastic about learning web programming.</p>
         <p>Starting out with JS, CSS, Visual Studio Code, SAP scripting, and basic commands at the Linux and Windows operating system levels.</p>
